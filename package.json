@@ -5,7 +5,7 @@
   "dependencies": {
     "@ramonak/react-progress-bar": "^5.0.3",
     "@reduxjs/toolkit": "^1.9.5",
-    "axios": "^1.4.0",
+    "axios": "^1.7.3",
     "bcrypt": "^5.1.1",
     "chart.js": "^4.3.0",
     "cloudinary": "^2.4.0",
