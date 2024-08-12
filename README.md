@@ -1,7 +1,7 @@
 ### React & Tailwind CSS Starter Pack
 This is a starter pack for creating React projects with Tailwind CSS configured. It uses React version **18.2** and Tailwind CSS version **3.2**.
 ## Deployed_link
-To open  [`https://study-notionakashsingh-da2ngc2a9-akashsinghgithubs-projects.vercel.app/`](click here).
+To open  [`click here`](https://study-notionakashsingh-da2ngc2a9-akashsinghgithubs-projects.vercel.app/).
 
 
 ## Usage
