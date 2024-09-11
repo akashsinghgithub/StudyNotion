@@ -47,7 +47,6 @@ exports.categoryPageDetails = async (req, res) => {
   try {
     const { categoryId } = req.body
 
-    // Get courses for the specified category
     const selectedCategory = await Category.findById(categoryId)
       .populate({
         path: "courses",
@@ -57,14 +56,12 @@ exports.categoryPageDetails = async (req, res) => {
       .exec()
 
     console.log("SELECTED COURSE", selectedCategory)
-    // Handle the case when the category is not found
     if (!selectedCategory) {
       console.log("Category not found.")
       return res
         .status(404)
         .json({ success: false, message: "Category not found" })
     }
-    // Handle the case when there are no courses
     if (selectedCategory.courses.length === 0) {
       console.log("No courses found for the selected category.")
       return res.status(404).json({
@@ -72,8 +69,6 @@ exports.categoryPageDetails = async (req, res) => {
         message: "No courses found for the selected category.",
       })
     }
-
-    // Get courses for other categories
     const categoriesExceptSelected = await Category.find({
       _id: { $ne: categoryId },
     })
@@ -87,7 +82,6 @@ exports.categoryPageDetails = async (req, res) => {
       })
       .exec()
     console.log()
-    // Get top-selling courses across all categories
     const allCategories = await Category.find()
       .populate({
         path: "courses",
