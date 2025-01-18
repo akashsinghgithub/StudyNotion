@@ -22,16 +22,22 @@ function ReviewSlider() {
   const truncateWords = 15
 
   useEffect(() => {
-    ;(async () => {
-      const { data } = await apiConnector(
-        "GET",
-        ratingsEndpoints.REVIEWS_DETAILS_API
-      )
-      if (data?.success) {
-        setReviews(data?.data)
+    const fetchReviews = async () => {
+      try {
+        const { data } = await apiConnector(
+          "GET",
+          ratingsEndpoints.REVIEWS_DETAILS_API
+        );
+        if (data?.success) {
+          setReviews(data?.data);
+        }
+      } catch (error) {
+        console.error("Error fetching reviews:", error);
       }
-    })()
-  }, [])
+    };
+  
+    fetchReviews();
+  }, []);
 
   // console.log(reviews)
 
